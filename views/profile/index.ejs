@@ -1,0 +1,120 @@
+<div class="max-w-2xl mx-auto mt-8">
+
+    <div class="bg-white shadow rounded-lg p-6">
+
+        <h2 class="text-2xl font-bold mb-6">Profile Settings</h2>
+
+
+
+        <%- include('../partials/messages') %>
+
+
+
+        <form action="/profile/update?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <div class="mb-6">
+
+                <div class="flex items-center">
+
+                    <img src="<%= user.avatar %>" alt="Avatar" class="w-20 h-20 rounded-full">
+
+                    <div class="ml-4">
+
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+
+                            Profile Picture
+
+                        </label>
+
+                        <input type="file" name="avatar" accept="image/*" class="text-sm">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="mb-6">
+
+                <label for="username" class="block text-gray-700 text-sm font-bold mb-2">
+
+                    Username
+
+                </label>
+
+                <input type="text" id="username" name="username" value="<%= user.username %>" 
+
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            </div>
+
+
+
+            <div class="mb-6">
+
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
+
+                    Email
+
+                </label>
+
+                <input type="email" id="email" name="email" value="<%= user.email %>"
+
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            </div>
+
+
+
+            <div class="mb-6">
+
+                <label for="currentPassword" class="block text-gray-700 text-sm font-bold mb-2">
+
+                    Current Password
+
+                </label>
+
+                <input type="password" id="currentPassword" name="currentPassword"
+
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            </div>
+
+
+
+            <div class="mb-6">
+
+                <label for="newPassword" class="block text-gray-700 text-sm font-bold mb-2">
+
+                    New Password (leave blank to keep current)
+
+                </label>
+
+                <input type="password" id="newPassword" name="newPassword"
+
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+            </div>
+
+
+
+            <div class="flex items-center justify-end">
+
+                <button type="submit"
+
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+

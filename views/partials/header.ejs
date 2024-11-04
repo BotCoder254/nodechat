@@ -1,0 +1,21 @@
+<header class="bg-white shadow"></header>
+<nav class="container mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+        <div class="text-xl font-semibold">
+            <a href="/">Chat App</a>
+        </div>
+        <div class="flex items-center">
+            <% if(user) { %>
+                <a href="/chat" class="mx-4">Chat Rooms</a>
+                <a href="/profile" class="mx-4">Profile</a>
+                <form action="/auth/logout" method="POST" class="inline">
+                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+                </form>
+                <% } else { %>
+                    <a href="/auth/login" class="mx-4">Login</a>
+                    <a href="/auth/register" class="mx-4">Register</a>
+                    <% } %>
+        </div>
+    </div>
+</nav>
+</header>
